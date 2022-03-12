@@ -2,43 +2,42 @@ FEATURED_SHARKS = ['1', '3']
     
 SHARKS = {
     '1': {
-    'about': 'A Finnish shark.',
-    'category': 'Carcharhinus macloti',
-    'followed_ids': ['2','3'],
-    'id': '1',
-    'name': 'Heikki the Hardnose Shark',
+        'about': 'A Finnish shark.',
+        'category': 'Carcharhinus macloti',
+        'followed_ids': ['2','3'],
+        'id': '1',
+        'name': 'Heikki the Hardnose Shark',
     },
     '2': {
-    'about': 'A Japanese shark.',
-    'category': 'Scyliorhinus tokubee',
-    'followed_ids': ['5','1'],
-    'id': '2',
-    'name': 'Ichigo the Izu Catshark',
+        'about': 'A Japanese shark.',
+        'category': 'Scyliorhinus tokubee',
+        'followed_ids': ['5','1'],
+        'id': '2',
+        'name': 'Ichigo the Izu Catshark',
     },
     '3': {
-    'about': 'A Spanish shark.',
-    'category': 'Isurus paucus',
-    'followed_ids': ['4'],
-    'id': '3',
-    'name': 'Lucrecia the Longfin Mako Shark',
+        'about': 'A Spanish shark.',
+        'category': 'Isurus paucus',
+        'followed_ids': ['4'],
+        'id': '3',
+        'name': 'Lucrecia the Longfin Mako Shark',
     },
     '4': {
-    'about': 'A Vietnamese shark.',
-    'category': 'Centrophorus tessellatus',
-    'followed_ids': ['1'],
-    'id': '4',
-    'name': 'Minh the Mosaic Gulper Shark',
+        'about': 'A Vietnamese shark.',
+        'category': 'Centrophorus tessellatus',
+        'followed_ids': ['1'],
+        'id': '4',
+        'name': 'Minh the Mosaic Gulper Shark',
     },
     '5': {
-    'about': 'An Indonesian-American shark.',
-    'category': 'Negaprion brevirostris',
-    'followed_ids': [],
-    'id': '5',
-    'name': 'Kiara the Kitefin Shark',
+        'about': 'An Indonesian-American shark.',
+        'category': 'Negaprion brevirostris',
+        'followed_ids': [],
+        'id': '5',
+        'name': 'Kiara the Kitefin Shark',
     },
 }
 
-# fake a sharkbook
 class FakeSharkbook:
     
     def get_featured_sharks(self):

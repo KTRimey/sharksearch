@@ -1,17 +1,16 @@
 import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
+import urllib3
 
-# the real sharkbook
+
 class Sharkbook:
     
     def get(self, url):     
-        retry = Retry(
+        retry = urllib3.util.retry.Retry(
            backoff_factor=0.1,
            status_forcelist=(500, 502, 503, 504),
         )
         
-        adapter = HTTPAdapter(max_retries=retry)
+        adapter = requests.adapters.HTTPAdapter(max_retries=retry)
        
         session = requests.Session()
         session.mount('http://', adapter)
