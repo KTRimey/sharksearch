@@ -1,22 +1,19 @@
 from flask import Flask, request
-import math
+from app.search import shark_search
+import json
+
 
 app = Flask(__name__)
 
-# import after after defining app to avoid a circular dependecy
-from app.crawl import shark_crawl
-from app.search import shark_search
-from app.sharkbook import Sharkbook
-
 @app.before_first_request
 def before_first_request():
+    
+    shark_file = open('shark_index.json','r')
+
     global shark_index
-
-    # sharkbook to crawl
-    crawl_target = Sharkbook()
-
-    # crawl data
-    shark_index = shark_crawl(crawl_target, max_sharks=10)
+    shark_index = json.loads(shark_file.read())
+    
+    shark_file.close()
 
 @app.route('/search')
 def search():
@@ -27,3 +24,4 @@ def search():
     category = request.args.get('category')
 
     return shark_search(query, category, shark_index)
+

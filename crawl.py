@@ -1,7 +1,12 @@
-from app import app
+import logging
+import json
+from sharkbook import Sharkbook
+
 
 # crawl SharkBook data with BFS
 def shark_crawl(sharkbook, max_sharks):
+    
+    shark_file = open('shark_index.json', 'w')
     
     # data structure
     shark_index = {}
@@ -9,7 +14,7 @@ def shark_crawl(sharkbook, max_sharks):
     visited = set() # crawled sharks by id
     to_do = set() # to-do list of sharks by id
 
-    app.logger.info('Starting crawl. Here sharky sharkies!')
+    logging.info('Starting crawl. Here sharky sharkies!')
 
     # start from a featured shark
     for featured_shark in sharkbook.get_featured_sharks():
@@ -22,7 +27,7 @@ def shark_crawl(sharkbook, max_sharks):
         # visit shark
         shark = sharkbook.get_shark(shark_id)
     
-        app.logger.info('Crawling... ' + shark['name'])
+        logging.info('Crawling... ' + shark['name'])
 
         # shark_index: each shark in category with name
         if shark['category'] in shark_index:
@@ -40,6 +45,13 @@ def shark_crawl(sharkbook, max_sharks):
 
         visited.add(shark_id)
 
-    app.logger.info('Finished! Total sharks crawled: {}'.format(len(visited)))
+    logging.info('Finished! Total sharks crawled: {}'.format(len(visited)))
 
-    return shark_index
+    shark_file.write(json.dumps(shark_index))
+    shark_file.close()
+
+    
+if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
+    
+    shark_crawl(sharkbook=Sharkbook(), max_sharks=5)
