@@ -8,6 +8,16 @@ from app.crawl import shark_crawl
 from app.search import shark_search
 from app.sharkbook import Sharkbook
 
+@app.before_first_request
+def before_first_request():
+    global shark_index
+
+    # sharkbook to crawl
+    crawl_target = Sharkbook()
+
+    # crawl data
+    shark_index = shark_crawl(crawl_target, max_sharks=10)
+
 @app.route('/search')
 def search():
     # if key doesn't exist, returns a 400, bad request error
@@ -17,12 +27,3 @@ def search():
     category = request.args.get('category')
 
     return shark_search(query, category, shark_index)
-
-# sharkbook to crawl
-crawl_target = Sharkbook()
-
-# limit on number of sharks to crawl (no limit: math.inf)
-crawl_limit = 10
- 
-# crawl data on startup 
-shark_index = shark_crawl(crawl_target, crawl_limit)
