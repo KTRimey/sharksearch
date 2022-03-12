@@ -8,12 +8,10 @@ app = Flask(__name__)
 @app.before_first_request
 def before_first_request():
     
-    shark_file = open('shark_index.json','r')
+    with open('shark_index.json','r') as shark_file:
 
-    global shark_index
-    shark_index = json.loads(shark_file.read())
-    
-    shark_file.close()
+        global shark_index
+        shark_index = json.loads(shark_file.read())
 
 @app.route('/search')
 def search():
