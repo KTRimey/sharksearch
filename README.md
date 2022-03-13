@@ -5,31 +5,26 @@
        //~~----___  (_o_-~
       '           |/'    
 
-## A simple search API for SharkBook
+## A simple search API for [SharkBook](https://gist.github.com/laurihy/3a9c11a6dc93e4ec6b87844413db3506)
 
 sharksearch has two parts: a crawl, and a search API with a single endpoint `/search`, which takes a parameter *query* and an optional parameter *category*. No assumptions are made about the typical form of the query. Search does substring match on names and is case-sensitive. Duplicate names are supported.
 
 #### You can test sharksearch out for yourself! 
 
-###### Installations:
+###### Installation:
 
-`pip install -r requirements.txt`
-
-###### Virtual Environment:
-
-It is a good idea to run sharksearch in a virtual environment. To do so, run the following commands in the sharksearch directory before installations. Then run the installations within the activated environment.
+It is a good idea to run sharksearch in a virtual environment. Set this up with the required dependencies with the following commands.
 
 `python3 -m venv venv`<br />
-`. venv/bin/activate`
+`. venv/bin/activate`<br />
+`pip install -r requirements.txt`
 
 ###### Running:
 
 `python3 crawl.py`<br />
 `flask run`
 
-To search through some sharks, clone the repository and run crawl.py. (For testing purposes, the call to shark_crawl() in crawl.py may be given a max_sharks. By default, this is positive infinity.) The crawl may take up to half an hour. After the crawl finishes (indicated by a log message, which also displays the number of sharks crawled), you may freely call flask run and use the web browser or otherwise to make HTTP requests to search.
-
-(Note that flask run uses the reloader and will run the crawl twice. To avoid this, instead call `flask run --no-reload `)
+To search through some sharks, clone the repository and run crawl.py. The crawl may take up to half an hour. (For testing purposes, the call to shark_crawl() in crawl.py may be given a max_sharks. By default, this is positive infinity.) After the crawl finishes (indicated by a log message, which also displays the number of sharks crawled), you may freely call flask run and use the web browser or otherwise to make HTTP requests to search.
 
 ###### Unit tests:
 
