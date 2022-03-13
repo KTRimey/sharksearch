@@ -13,7 +13,7 @@ class TestSearch(unittest.TestCase):
         shark_index = shark_crawl(sharkbook=FakeSharkbook())
 
         # search with query 'Heikki'
-        result = shark_search('Heikki', None, shark_index)
+        result = shark_search('Alicia', None, shark_index)
         self.assertEqual(result['result'], [SHARKS['1']])
         
         # search with query 'Izu' and category 'Scyliorhinus tokubee'

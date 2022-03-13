@@ -6,7 +6,7 @@ SHARKS = {
         'category': 'Carcharhinus macloti',
         'followed_ids': ['2','3'],
         'id': '1',
-        'name': 'Heikki the Hardnose Shark',
+        'name': 'Alicia the Amazing Great White Shark',
     },
     '2': {
         'about': 'A Japanese shark.',
