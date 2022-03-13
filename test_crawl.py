@@ -8,15 +8,18 @@ class TestCrawl(unittest.TestCase):
     
     def test_crawl(self):
         
-        crawl_target = FakeSharkbook()
-    
         # crawl data from FakeSharkbook
-        shark_index = shark_crawl(crawl_target)
+        shark_index = shark_crawl(sharkbook=FakeSharkbook())
         
-        # assert that all fake sharks are in crawled data
+        # assert that all crawled sharks are in fake data
         for category in shark_index:
             for name in shark_index[category]:
-                self.assertTrue(shark_index[category][name][0] in SHARKS.values())
+                for shark in shark_index[category][name]:
+                    self.assertTrue(shark in SHARKS.values())
+                
+        # assert that all fake sharks are in crawled data 
+        for fake_shark in SHARKS.values():
+            self.assertTrue(fake_shark in shark_index[fake_shark['category']][fake_shark['name']])
     
 if __name__ == '__main__':
   unittest.main()

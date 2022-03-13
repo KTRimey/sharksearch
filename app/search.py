@@ -1,5 +1,5 @@
 def shark_search(query, category, shark_index):
-    """ search for sharks! """
+    """Search for sharks!"""
     
     matched = []
 

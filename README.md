@@ -26,6 +26,10 @@ It is a good idea to run sharksearch in a virtual environment. Set this up with 
 
 To search through some sharks, clone the repository and run crawl.py. The crawl may take up to half an hour. (For testing purposes, the call to shark_crawl() in crawl.py may be given a max_sharks. By default, this is positive infinity.) After the crawl finishes (indicated by a log message, which also displays the number of sharks crawled), you may freely call flask run and use the web browser or otherwise to make HTTP requests to search.
 
+**For example:**
+http://127.0.0.1:5000/search?query=Breanna
+http://127.0.0.1:5000/search?query=Breanna&category=Prionace%20glauca
+
 ###### Unit tests:
 
 `python3 -m unittest`

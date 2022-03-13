@@ -6,7 +6,7 @@ from sharkbook import Sharkbook
 
 
 def shark_crawl(sharkbook, max_sharks=math.inf):
-    """ crawl SharkBook data with BFS """
+    """Crawl SharkBook data with BFS."""
     
     # result to be returned
     shark_index = {}
