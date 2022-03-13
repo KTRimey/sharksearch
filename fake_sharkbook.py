@@ -3,7 +3,7 @@ FEATURED_SHARKS = ['1', '3']
 SHARKS = {
     '1': {
         'about': 'A Finnish shark.',
-        'category': 'Carcharhinus macloti',
+        'category': 'Carcharodon carcharias',
         'followed_ids': ['2','3'],
         'id': '1',
         'name': 'Alicia the Amazing Great White Shark',
