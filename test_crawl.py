@@ -4,6 +4,7 @@ from fake_sharkbook import FakeSharkbook, SHARKS
 import json
 import math
 
+
 class TestCrawl(unittest.TestCase):
     def test_crawl(self):
         

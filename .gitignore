@@ -1,5 +1,5 @@
-shark_index.json
-.DS_Store
+**/shark_index.json
+**/.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
