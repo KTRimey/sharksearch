@@ -9,10 +9,8 @@ class TestSearch(unittest.TestCase):
     
     def test_search(self):
         
-        crawl_target = FakeSharkbook()
-    
         # crawl data from FakeSharkbook
-        shark_index = shark_crawl(crawl_target)
+        shark_index = shark_crawl(sharkbook=FakeSharkbook())
 
         # search with query 'Heikki'
         result = shark_search('Heikki', None, shark_index)
