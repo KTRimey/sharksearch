@@ -19,7 +19,9 @@ class TestCrawl(unittest.TestCase):
                 
         # assert that all fake sharks are in crawled data 
         for fake_shark in SHARKS.values():
-            self.assertTrue(fake_shark in shark_index[fake_shark['category']][fake_shark['name']])
+            category = fake_shark['category']
+            name = fake_shark['name']
+            self.assertTrue(fake_shark in shark_index[category][name])
     
 if __name__ == '__main__':
   unittest.main()

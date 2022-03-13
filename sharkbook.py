@@ -4,7 +4,7 @@ import urllib3
 
 class Sharkbook:
     
-    def get(self, url):     
+    def _get(self, url):     
         retry = urllib3.util.retry.Retry(
            backoff_factor=0.1,
            status_forcelist=(500, 502, 503, 504),
@@ -22,8 +22,8 @@ class Sharkbook:
         return response.json()
 
     def get_featured_sharks(self):
-        sharks = self.get('https://sharkbook.matchmade.tv')
+        sharks = self._get('https://sharkbook.matchmade.tv')
         return sharks['featured_users']
 
     def get_shark(self, id):
-        return self.get('https://sharkbook.matchmade.tv/users/' + str(id))
+        return self._get('https://sharkbook.matchmade.tv/users/' + str(id))
