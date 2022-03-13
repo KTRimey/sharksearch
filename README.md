@@ -7,7 +7,7 @@
 
 ## A simple search API for [SharkBook](https://gist.github.com/laurihy/3a9c11a6dc93e4ec6b87844413db3506)
 
-sharksearch has two parts: a crawl, and a search API with a single endpoint `/search`, which takes a parameter *query* and an optional parameter *category*. Search performs case-sensitive substring match on names with *query* exact match on categories with *category*.
+sharksearch has two parts: a crawl, and a search API with a single endpoint `/search`, which takes a parameter *query* and an optional parameter *category*. Search performs case-sensitive substring match on names with *query* and exact match on categories with *category*.
 
 #### You can test sharksearch out for yourself! 
 
