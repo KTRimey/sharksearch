@@ -15,15 +15,15 @@ class TestSearch(unittest.TestCase):
 
         # search with query 'Heikki'
         result = shark_search('Heikki', None, shark_index)
-        self.assertEqual([SHARKS['1']], result['result'])
+        self.assertEqual(result['result'], [SHARKS['1']])
         
         # search with query 'Izu' and category 'Scyliorhinus tokubee'
         result = shark_search('Izu', 'Scyliorhinus tokubee', shark_index)
-        self.assertEqual([SHARKS['2']], result['result'])
+        self.assertEqual(result['result'], [SHARKS['2']])
         
         # search with query 'Minh the Milk-eye catshark'
         result = shark_search('Minh the Milk-eye catshark', None, shark_index)
-        self.assertEqual([], result['result'])
+        self.assertEqual(result['result'], [])
 
 
 if __name__ == '__main__':

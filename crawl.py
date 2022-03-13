@@ -4,10 +4,9 @@ import math
 from sharkbook import Sharkbook
 
 
-""" crawl SharkBook data with BFS """
 def shark_crawl(sharkbook, max_sharks=5):
+    """ crawl SharkBook data with BFS """
     
-    # data structure
     shark_index = {}
 
     visited = set() # crawled sharks by id
@@ -15,7 +14,7 @@ def shark_crawl(sharkbook, max_sharks=5):
 
     logging.info('Starting crawl. Here sharky sharkies!')
 
-    # start from a featured shark
+    # add featured sharks to to-do
     for featured_shark in sharkbook.get_featured_sharks():
         to_do.add(featured_shark['id'])
 
@@ -37,12 +36,12 @@ def shark_crawl(sharkbook, max_sharks=5):
         else:
             shark_index[shark['category']] = {shark['name']: [shark]}
 
+        visited.add(shark_id)
+        
         # connections of shark
         for friend_id in shark['followed_ids']:
             if friend_id not in visited:
                 to_do.add(friend_id)
-
-        visited.add(shark_id)
 
     logging.info('Finished! Total sharks crawled: {}'.format(len(visited)))
     
