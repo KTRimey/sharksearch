@@ -5,7 +5,7 @@ import math
 from sharkbook import Sharkbook
 
 
-def shark_crawl(sharkbook, max_sharks=5):
+def shark_crawl(sharkbook, max_sharks=math.inf):
     """ crawl SharkBook data with BFS """
     
     # result to be returned
@@ -46,7 +46,8 @@ def shark_crawl(sharkbook, max_sharks=5):
     logging.info('Finished! Total sharks crawled: {}'.format(len(visited)))
 
     return shark_index
-    
+
+
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
     
