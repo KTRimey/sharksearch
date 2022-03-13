@@ -26,15 +26,17 @@ def shark_crawl(sharkbook, max_sharks=math.inf):
 
         # visit shark
         shark = sharkbook.get_shark(shark_id)
+        name = shark['name']
+        category = shark['category']
     
-        logging.info('Crawling... ' + shark['name'])
+        logging.info('Crawling... ' + name)
 
         # shark_index: each shark in category with name
-        if shark['category'] not in shark_index:
-            shark_index[shark['category']] = {}
-        if shark['name'] not in shark_index[shark['category']]:
-            shark_index[shark['category']][shark['name']] = []
-        shark_index[shark['category']][shark['name']].append(shark)
+        if category not in shark_index:
+            shark_index[category] = {}
+        if name not in shark_index[category]:
+            shark_index[category][name] = []
+        shark_index[category][name].append(shark)
 
         visited.add(shark_id)
 

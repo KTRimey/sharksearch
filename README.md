@@ -15,12 +15,19 @@ sharksearch has two parts: a crawl, and a search API with a single endpoint `/se
 
 `pip install -r requirements.txt`
 
+###### Virtual Environment:
+
+It is a good idea to run sharksearch in a virtual environment. To do so, run the following commands in the sharksearch directory before installations. Then run the installations within the activated environment.
+
+`python3 -m venv venv`
+`. venv/bin/activate`
+
 ###### Running:
 
 `python3 crawl.py`
 `flask run`
 
-To search through some sharks, clone the repository and run crawl.py. (For testing purposes, the call to shark_crawl() in crawl.py may be given a max_sharks. By default, this is positive infinity.) After the crawl finishes (indicated by a log message, which also displays the number of sharks crawled), you may freely call run flask and use the web browser or otherwise to make HTTP requests to search. 
+To search through some sharks, clone the repository and run crawl.py. (For testing purposes, the call to shark_crawl() in crawl.py may be given a max_sharks. By default, this is positive infinity.) The crawl may take up to half an hour. After the crawl finishes (indicated by a log message, which also displays the number of sharks crawled), you may freely call run flask and use the web browser or otherwise to make HTTP requests to search. 
 
 ###### Unit tests:
 
