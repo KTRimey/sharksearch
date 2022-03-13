@@ -1,10 +1,11 @@
 import logging
 import json
+import math
 from sharkbook import Sharkbook
 
 
 """ crawl SharkBook data with BFS """
-def shark_crawl(sharkbook, max_sharks):
+def shark_crawl(sharkbook, max_sharks=5):
     
     # data structure
     shark_index = {}
@@ -44,12 +45,13 @@ def shark_crawl(sharkbook, max_sharks):
         visited.add(shark_id)
 
     logging.info('Finished! Total sharks crawled: {}'.format(len(visited)))
-
-    with open('shark_index.json', 'w') as shark_file:
-        shark_file.write(json.dumps(shark_index))
-
+    
+    return shark_index
     
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
     
-    shark_crawl(sharkbook=Sharkbook(), max_sharks=5)
+    shark_index = shark_crawl(sharkbook=Sharkbook())
+    
+    with open('shark_index.json', 'w') as shark_file:
+        shark_file.write(json.dumps(shark_index))
