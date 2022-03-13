@@ -1,6 +1,7 @@
+import json
+
 from flask import Flask, request
 from app.search import shark_search
-import json
 
 
 app = Flask(__name__)

@@ -1,4 +1,5 @@
 import unittest
+
 from crawl import shark_crawl
 from fake_sharkbook import FakeSharkbook, SHARKS
 
