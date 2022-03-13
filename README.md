@@ -27,7 +27,9 @@ It is a good idea to run sharksearch in a virtual environment. To do so, run the
 `python3 crawl.py`<br />
 `flask run`
 
-To search through some sharks, clone the repository and run crawl.py. (For testing purposes, the call to shark_crawl() in crawl.py may be given a max_sharks. By default, this is positive infinity.) The crawl may take up to half an hour. After the crawl finishes (indicated by a log message, which also displays the number of sharks crawled), you may freely call run flask and use the web browser or otherwise to make HTTP requests to search. 
+To search through some sharks, clone the repository and run crawl.py. (For testing purposes, the call to shark_crawl() in crawl.py may be given a max_sharks. By default, this is positive infinity.) The crawl may take up to half an hour. After the crawl finishes (indicated by a log message, which also displays the number of sharks crawled), you may freely call flask run and use the web browser or otherwise to make HTTP requests to search.
+
+(Note that flask run uses the reloader and will run the crawl twice. To avoid this, instead call `flask run --no-reload `)
 
 ###### Unit tests:
 
