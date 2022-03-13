@@ -3,7 +3,7 @@
     \.          |\
        \`.___---~~  ~~~--_
        //~~----___  (_o_-~
-      '           |/'
+      '           |/'    
 
 ## A simple search API for SharkBook
 
@@ -28,3 +28,4 @@ To search through some sharks, clone the repository and run crawl.py. (For testi
 
 Unit tests are implemented for crawl and search by faking, using the Python unittest framework. The unit test for search relies on crawl on the FakeSharkbook.
 
+<sub>ASCII art by Tom Youderian<sub>
